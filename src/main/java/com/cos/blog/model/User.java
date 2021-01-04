@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +28,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable = false, length = 30)
+	@Column(nullable = false, length = 30, unique = true)
 	private String username;
 	
 	@Column(nullable = false, length = 100)
@@ -35,8 +37,9 @@ public class User {
 	@Column(nullable = false, length = 100)
 	private String email;
 	
-	@ColumnDefault("'user'")
-	private String role;//enum이 좋당
+	//@ColumnDefault("'user'")
+	@Enumerated(EnumType.STRING)
+	private RoleType role;//enum이 좋당
 	
 	@CreationTimestamp
 	private Timestamp createDate;
