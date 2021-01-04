@@ -5,7 +5,7 @@
 <div class="container">
 	<form action="/action_page.php">
 		<div class="form-group">
-			<label for="email">Username</label> <input type="text"
+			<label for="Username">Username</label> <input type="text"
 				class="form-control" placeholder="Enter Username" id="Username">
 		</div>
 		<div class="form-group">
