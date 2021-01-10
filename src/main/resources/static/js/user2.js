@@ -3,10 +3,10 @@ let index = {
 	init: function() {
 		$("#btn-save").on("click", () => {
 			this.save();
-		});/*
+		});
 		$("#btn-login").on("click", () => {
 			this.login();
-		});	*/	
+		});		
 	},	
 	save: function() {
 		//alert('user의 save함수 호출 되따');
@@ -20,7 +20,7 @@ let index = {
 		//$.ajax().done().fail();
 		$.ajax({
 			type:"POST",
-			url:"/auth/joinProc",
+			url:"/api/user",
 			data:JSON.stringify(data),
 			contentType:"application/json;charset=utf-8",
 			dataType:"json",
@@ -32,7 +32,7 @@ let index = {
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
-	}/*,
+	},
 	login: function() {
 		//alert('user의 save함수 호출 되따');
 		let data = {
@@ -64,7 +64,7 @@ let index = {
 		}).fail(function(error){
 			alert(JSON.stringify(error));
 		});
-	}*/
+	}
 }
 
 index.init();

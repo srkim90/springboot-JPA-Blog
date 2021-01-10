@@ -3,26 +3,24 @@
 <%@ include file="../layout/header.jsp" %>
 
 <div class="container">
-	<form action="/action_page.php">
+	<form action="/auth/loginProc" method="post">
 		<div class="form-group">
 			<label for="email">Username</label> <input type="text"
-				class="form-control" placeholder="Enter Username" id="Username">
+				class="form-control" name="username" placeholder="Enter Username" id="Username">
 		</div>
 		<div class="form-group">
-			<label for="email">Email address:</label> <input type="email"
-				class="form-control" placeholder="Enter email" id="email">
-		</div>
-		<div class="form-group">
-			<label for="password">Email address:</label> <input type="password"
-				class="form-control" placeholder="Enter password" id="password">
+			<label for="password">password:</label> <input type="password"
+				class="form-control" name="password" placeholder="Enter password" id="password">
 		</div>	
 	
 		<div class="form-group form-check">
 			<label class="form-check-label"> <input
-				class="form-check-input" type="checkbox"> Remember me
+				class="form-check-input" name="remember" type="checkbox"> Remember me
 			</label>
 		</div>
-		<button type="submit" class="btn btn-primary">로그인</button>
+		<button id="btn-login" class="btn btn-primary">로그인</button>
 	</form>
+	
 </div>
+<!-- <script src="/js/user.js"></script> -->
 <%@ include file="../layout/footer.jsp" %>
